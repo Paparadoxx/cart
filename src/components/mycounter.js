@@ -43,7 +43,9 @@ function MyCounter({ min, max, current, onChange }) {
 	return (<div>
 		<button type='button' onClick={decrement} disabled={current <= min}>-</button>
 		<input type='text' value={value} onChange={inputHandler} onBlur={applyStrValue} />
-		<button type='button' onClick={increment} disabled={current >= max}>+</button>
+		<button type='button' onClick={increment} disabled={current >= max}
+			title={settings.lang=== 'ru' ? 'увеличить': 'increase'}
+		>+</button>
 	</div>
 	)
 }

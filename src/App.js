@@ -96,6 +96,8 @@ function App() {
       </main>
       <footer>
         footer
+        <button type='button' onClick={()=> setSettings({lang:'ru'})}>ru</button>
+        <button type='button' onClick={()=> setSettings({lang:'en'})}>en</button>
         <ModalExample />
       </footer>
     </div>
