@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
-import SettingsContext from './../contexts/userSettings';
 
 MyCounter.propTypes = {
 	min: PropTypes.number,
@@ -34,8 +33,6 @@ function MyCounter({ min, max, current, onChange }) {
 		}
 	}
 
-	let settings = useContext(SettingsContext);
-
 	useEffect(() => {
 		setValue(current);
 	}, [current]);
@@ -44,7 +41,6 @@ function MyCounter({ min, max, current, onChange }) {
 		<button type='button' onClick={decrement} disabled={current <= min}>-</button>
 		<input type='text' value={value} onChange={inputHandler} onBlur={applyStrValue} />
 		<button type='button' onClick={increment} disabled={current >= max}
-			title={settings.lang=== 'ru' ? 'увеличить': 'increase'}
 		>+</button>
 	</div>
 	)
